@@ -11,10 +11,14 @@
 ## Выполнение кода JavaScript в браузере
 1. Открыл файл `index.html` в браузере.
 2. Написал команду console.log("Hello, world!");
+   
     ![Screen1](screenshots/Screenshot_1.png)
-3. Запиcал в консоль 2 + 3.
+   
+4. Запиcал в консоль 2 + 3.
+   
     ![Screen2](screenshots/Screenshot_2.png)
-4. Создал первую HTML-страницы и подключил к нему JavaScript
+   
+6. Создал первую HTML-страницы и подключил к нему JavaScript
 Код в `index.html`:
 ```HTML
 <!DOCTYPE html>
