@@ -188,12 +188,15 @@ const transactions = [
 ];
 ```
 Результат:
+
 ![screan1](screanshots/Screenshot_1.png)
+
 ![screan2](screanshots/Screenshot_2.png)
 
 Новый массив транзакции:
 
 ![screan1](screanshots/Screenshot_3.png)
+
 ![screan1](screanshots/Screenshot_4.png)
 
 Пустой массив транзакции:
