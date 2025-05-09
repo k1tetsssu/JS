@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Учет личных финансов</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Личный финансовый трекер</h1>
+
+  <form id="transaction-form">
+    <input type="number" id="amount" placeholder="Сумма" required>
+    <select id="category" required>
+      <option value="Доход">Доход</option>
+      <option value="Расход">Расход</option>
+      <option value="Прочее">Прочее</option>
+    </select>
+    <textarea id="description" placeholder="Описание транзакции" required></textarea>
+    <button type="submit">Добавить</button>
+  </form>
+
+  <h2>Транзакции</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Дата и Время</th>
+        <th>Категория</th>
+        <th>Краткое описание</th>
+        <th>Действие</th>
+      </tr>
+    </thead>
+    <tbody id="transactions-body"></tbody>
+  </table>
+
+  <p><strong>Общая сумма:</strong> <span id="total">0.00 лей.</span></p>
+
+  <div id="full-description" style="margin-top: 1em; font-style: italic;"></div>
+
+  <script type="module" src="./src/index.js"></script>
+</body>
+</html>
