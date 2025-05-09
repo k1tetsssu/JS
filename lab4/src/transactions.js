@@ -11,7 +11,15 @@
  * Массив для хранения всех транзакций.
  * @type {Transaction[]}
  */
-let transactions = [];
+let transactions = [
+    {
+        id: 'uuid',
+        date: '2025-05-09 14:00',
+        amount: 1000,
+        category: 'Доход',
+        description: 'Зарплата за проект'
+    }
+];
 
 /**
  * Возвращает текущий массив транзакций.
