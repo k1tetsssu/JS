@@ -1,0 +1,267 @@
+:root {
+    --bg-color: #f4f7f6; 
+    --text-color: #333; 
+    --header-bg: #6c5ce7; 
+    --button-bg: #00b894; 
+    --button-hover-bg: #01a380; 
+    --card-bg: #ffffff;
+    --card-border: #ddd;
+    --day-border: #ccc;
+    --done-day-bg: #00b894;
+    --error-color: #d63031; 
+}
+
+body.dark {
+    --bg-color: #2d3436; 
+    --text-color: #ffffff; 
+    --header-bg: #4a3b9b; 
+    --button-bg: #009475; 
+    --button-hover-bg: #008265; 
+    --card-bg: #3a4750; 
+    --card-border: #555; 
+    --day-border: #555; 
+    --done-day-bg: #00b894; 
+    --error-color: #ff7675; 
+}
+
+body {
+    font-family: 'Arial', sans-serif; 
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem; 
+    background: var(--header-bg);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+header h1 {
+    margin: 0; 
+    font-size: 1.8rem;
+}
+
+main {
+    padding: 1rem 1.5rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+
+#habit-form, #filter-section {
+    padding: 1rem;
+    background-color: var(--card-bg); 
+    border-radius: 8px;
+    margin-bottom: 1.5rem; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    gap: 0.75rem; 
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#habit-form input[type="text"],
+#filter-section input[type="text"],
+#filter-section select {
+    padding: 0.75rem; 
+    border: 1px solid var(--day-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-color); 
+    flex: 1; 
+    min-width: 150px; 
+}
+
+#habitColor {
+    padding: 0.2rem; 
+    border: 1px solid var(--day-border);
+    border-radius: 4px;
+    height: 40px; 
+    background-color: var(--bg-color);
+}
+
+
+button {
+    padding: 0.75rem 1.5rem; 
+    background: var(--button-bg);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background 0.3s ease, opacity 0.3s ease;
+    flex-shrink: 0; 
+}
+
+button:hover {
+    background: var(--button-hover-bg);
+    opacity: 0.9;
+}
+
+button#toggleTheme {
+     background: #f0ad4e;
+     margin-left: 1rem;
+}
+
+button#toggleTheme:hover {
+    background: #ec9a29;
+}
+
+
+#habitError { 
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    flex-basis: 100%; 
+    text-align: center;
+}
+
+#habitContainer {
+    padding-top: 0; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; 
+    justify-content: center; 
+}
+
+.habit-card {
+    border: 1px solid var(--card-border);
+    background-color: var(--card-bg);
+    padding: 1.5rem; 
+    border-radius: 8px;
+    min-width: 250px; 
+    max-width: 300px; 
+    width: 100%; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+@media (min-width: 768px) {
+    .habit-card {
+        width: calc(50% - 1.5rem/2); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .habit-card {
+         width: calc(33.33% - 1.5rem * 2 / 3); 
+    }
+}
+
+
+.habit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem; 
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.habit-header strong {
+     overflow-wrap: break-word; 
+}
+
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem; 
+    margin-top: auto;
+    justify-content: center;
+}
+
+.day {
+    width: 32px;
+    height: 32px;
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    border: 1px solid var(--day-border);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.day:hover {
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+body.dark .day:hover {
+     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.day.done {
+    background: var(--done-day-bg);
+    color: white;
+    border-color: var(--done-day-bg); 
+    font-weight: bold;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    background: var(--error-color); 
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; 
+    line-height: 1; 
+    cursor: pointer;
+    transition: background 0.2s ease;
+    padding: 0; 
+}
+
+.delete-btn:hover {
+    background: #c0392b; 
+    opacity: 1; 
+}
+
+
+@media (max-width: 400px) {
+    #habit-form, #filter-section {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    #habit-form input[type="text"],
+    #filter-section input[type="text"],
+    #filter-section select,
+    button {
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+
+    #habitColor {
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+    }
+
+    #habit-form input[type="text"] {
+         flex: none; 
+    }
+     button#toggleTheme {
+         margin-left: 0;
+         margin-top: 0.5rem; 
+     }
+}

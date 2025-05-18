@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <header>
+        <h1>Трекер Привычек</h1>
+        <button id="toggleTheme">Светлая тема</button>
+    </header>
+
+    <main>
+        <section id="habit-form">
+            <input type="text" id="habitName" placeholder="Введите название привычки" required>
+            <input type="color" id="habitColor" value="#00b894">
+            <button id="addHabitBtn">Добавить привычку</button>
+            <p class="error" id="habitError"></p>
+        </section>
+
+        <section id="filter-section">
+            <input type="text" id="searchInput" placeholder="Поиск по названию">
+            <select id="statusFilter">
+                <option value="all">Все</option>
+                <option value="done">Выполнено сегодня</option> 
+                <option value="not-done">Не выполнено сегодня</option>
+            </select>
+        </section>
+
+        <section id="habitContainer"></section>
+    </main>
+
+    <script type="module" src="./src/habitManager.js"></script>
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
